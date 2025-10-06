@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Abdullah Al Ramadhani</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* css/style.css */
+
+        /* Pengaturan Dasar & Font */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* --- HEADER --- */
+        header {
+            background-color: #fff;
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 50px; /* Atur tinggi logo Anda */
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav li {
+            margin-left: 25px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #0000c9; /* Warna biru saat kursor di atasnya */
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+
+        footer .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-copyright p {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        .footer-social a {
+            color: #ecf0f1;
+            margin-left: 15px;
+            font-size: 20px;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-social a:hover {
+            color: #3498db;
+        }
+
+        /* css/home.css */
+
+        /* --- BAGIAN 1: HERO / PERKENALAN (Layout Proporsional Baru) --- */
+        #hero {
+            background-color: #f8f9fa;
+            padding: 80px 0; /* Menambah sedikit ruang atas dan bawah */
+            display: flex;
+            align-items: center;
+            min-height: 60vh; /* Memberi tinggi minimal agar terlihat seimbang */
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center; /* Membuat gambar dan teks sejajar di tengah secara vertikal */
+            gap: 50px; /* Jarak antara gambar dan tulisan */
+        }
+
+        .hero-image {
+            flex: 1;
+            order: 2; /* Memindahkannya ke urutan kedua (kanan) */
+        }
+
+        .hero-image img {
+            width: 100%;
+            display: block;
+            aspect-ratio: 1 / 1; /* Menjaga gambar tetap berbentuk kotak sempurna */
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .hero-text {
+            flex: 1.5;
+            order: 1; /* Memindahkannya ke urutan pertama (kiri) */
+        }
+
+        .hero-text h1 {
+            font-size: 48px;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        .hero-text p {
+            font-size: 18px;
+            line-height: 1.7;
+        }
+
+        /* --- BAGIAN 2: ABOUT TEASER --- */
+        #about-teaser {
+            position: relative;
+            padding: 120px 0;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+        }
+
+        .about-teaser-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.2);
+            z-index: 2;
+        }
+
+        #about-teaser .container {
+            position: relative;
+            z-index: 3;
+            width: 100%;
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        .about-card {
+            background-color: #ffffffac;
+            border-radius: 20px;
+            padding: 40px 50px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            max-width: 500px;
+            text-align: center;
+        }
+
+        .about-card .intro-text {
+            font-size: 16px;
+            color: #888;
+            margin-bottom: 5px;
+        }
+
+        .about-card h2 {
+            font-size: 36px;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        .about-card p {
+            font-size: 17px;
+            line-height: 1.6;
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        .about-card .btn {
+            background-color: #222;
+            color: #fff;
+            padding: 14px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .about-card .btn:hover {
+            background-color: #000;
+            transform: translateY(-3px);
+        }
+
+        /* --- BAGIAN 3: KEGIATAN SAYA --- */
+        #activities {
+            background-color: #f8f9fa;
+            padding: 60px 0;
+        }
+
+        #activities h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 28px;
+        }
+
+        .activities-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .activity-card {
+            background-color: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+        }
+
+        .activity-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .activity-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .card-content .tag {
+            display: inline-block;
+            background-color: #e7e7e7;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .card-content p {
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        /* --- BAGIAN 4: GALERI FOTO --- */
+        .slider-container {
+            margin: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slides img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            padding: 16px;
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border: none;
+            user-select: none;
+            transition: background-color 0.3s;
+        }
+
+        .prev {
+            left: 0;
+            border-radius: 0 3px 3px 0;
+        }
+
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        .prev:hover, .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html"><img src="foto/logo.png" alt="Logo Saya"></a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero">
+            <div class="container hero-content">
+                <div class="hero-image">
+                    <img src="foto/abg ganteng.jpg" alt="Foto Abdullah Al Ramadhani">
+                </div>
+                <div class="hero-text">
+                    <h1>Abdullah Al Ramadhani</h1>
+                    <p>
+                        Selamat datang di website pribadi saya. Di sini saya berbagi tentang kegiatan, keahlian, dan pemikiran saya. Saya adalah seorang mahasiswa yang bersemangat dalam dunia teknologi dan pengembangan diri.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="about-teaser">
+            <img src="foto/backgroung.jpeg" alt="Latar Belakang Kegiatan" class="about-teaser-bg">
+            <div class="overlay"></div>
+            <div class="container">
+                <div class="about-card">
+                    <p class="intro-text">Halo!</p>
+                    <h2>Izinkan saya memperkenalkan diri.</h2>
+                    <p>
+                        Saya percaya bahwa proses belajar tidak pernah berhenti. Setiap hari adalah kesempatan baru untuk menemukan hal baru. Ingin tahu lebih banyak tentang perjalanan dan pengalaman saya?
+                    </p>
+                    <a href="about.html" class="btn">Tentang Saya</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="activities">
+            <div class="container">
+                <h2>Kegiatan Saya</h2>
+                <div class="activities-grid">
+                    <div class="activity-card">
+                        <img src="foto/baskat.jpg" alt="Olahraga Basket">
+                        <div class="card-content">
+                            <span class="tag">Hobi</span>
+                            <p>Hobi yang saya sukai adalah bermain basket.</p>
+                        </div>
+                    </div>
+                    <div class="activity-card">
+                        <img src="foto/coding.jpeg" alt="Coding">
+                        <div class="card-content">
+                            <span class="tag">Skill</span>
+                            <p>Skill yang saya punya salah satunya adalah coding.</p>
+                        </div>
+                    </div>
+                    <div class="activity-card">
+                        <img src="foto/hmif.JPG" alt="Organisasi Mahasiswa">
+                        <div class="card-content">
+                             <span class="tag">Organisasi</span>
+                            <p>Organisasi yang saya jalankan sekarang adalah himpunan mahasiswa informatika.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="gallery">
+            <div class="slider-container">
+                <div class="slides">
+                    <img src="foto/basket.jpg" alt="Galeri Foto 1">
+                    <img src="foto/anjay.jpg" alt="Galeri Foto 2">
+                    <img src="foto/sg.jpg" alt="Galeri Foto 3">
+                    <img src="foto/smk.jpg" alt="Galeri Foto 4">
+                </div>
+                <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+                <button class="next" onclick="moveSlide(1)">&#10095;</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-copyright">
+                <p>&copy; 2025 Copyright: Abdullah Al Ramadhani</p>
+            </div>
+            <div class="footer-social">
+                <a href="https://www.instagram.com/a.a.ramadhanny/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/abdullah-al-ramadhani-05066a322/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://line.me/ti/p/T7sXDf6xJQ" target="_blank"><i class="fab fa-line"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // js/script.js
+        let slideIndex = 0;
+        const slides = document.querySelector('.slides');
+        const totalSlides = document.querySelectorAll('.slides img').length;
+
+        function moveSlide(n) {
+            slideIndex += n;
+            
+            if (slideIndex >= totalSlides) {
+                slideIndex = 0; // Kembali ke slide pertama
+            }
+            if (slideIndex < 0) {
+                slideIndex = totalSlides - 1; // Pergi ke slide terakhir
+            }
+            
+            slides.style.transform = `translateX(-${slideIndex * 100}%)`;
+        }
+
+        function autoSlide() {
+            moveSlide(1);
+        }
+
+        setInterval(autoSlide, 3000);
+    </script>
+</body>
+</html>
