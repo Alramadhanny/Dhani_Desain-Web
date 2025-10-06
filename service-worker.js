@@ -18,7 +18,6 @@ const urlsToCache = [
   'foto/anjay.jpg',
   'foto/sg.jpg',
   'foto/smk.jpg',
-  'foto/keren.png',
   'foto/keren.png'
 ];
 
@@ -62,5 +61,6 @@ self.addEventListener('activate', event => {
   );
 
 });
+
 
 
