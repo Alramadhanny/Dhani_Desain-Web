@@ -18,8 +18,8 @@ const urlsToCache = [
   'foto/anjay.jpg',
   'foto/sg.jpg',
   'foto/smk.jpg',
-  'foto/icons/icon-192x192.png',
-  'foto/icons/icon-512x512.png'
+  'foto/DNY.png',
+  'foto/DNY.png'
 ];
 
 self.addEventListener('install', event => {
@@ -62,3 +62,4 @@ self.addEventListener('activate', event => {
   );
 
 });
+
