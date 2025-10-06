@@ -1,7 +1,7 @@
 const CACHE_NAME = 'abdullah-website-v2';
 // Daftar semua file yang perlu di-cache
 const urlsToCache = [
-  '/',
+  '.',
   'index.html',
   'about.html',
   'contact.html',
@@ -60,4 +60,5 @@ self.addEventListener('activate', event => {
       );
     })
   );
+
 });
