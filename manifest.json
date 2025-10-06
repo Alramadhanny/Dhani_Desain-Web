@@ -8,14 +8,15 @@
   "description": "Website pribadi Abdullah Al Ramadhani.",
   "icons": [
     {
-      "src": "foto/DNY.png",
+      "src": "foto/keren.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "foto/DNY.png",
+      "src": "foto/keren.png",
       "sizes": "512x512",
       "type": "image/png"
     }
   ]
 }
+
